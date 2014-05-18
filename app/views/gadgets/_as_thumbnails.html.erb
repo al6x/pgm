@@ -1,0 +1,19 @@
+<div class="gadgets-as-thumbnails">
+  <% @gadgets.each do |gadget| %>
+    <div class="gadget-image-with-name">
+      <%= link_to gadget, method: :delete, class: "gadget-image-remove", data: { confirm: 'Are you sure?' } do %>
+        <span class="glyphicon glyphicon-remove"></span>
+      <% end %>
+
+      <%= link_to gadget do %>
+        <div class="gadget-image-with-name-outer">
+          <% if gadget.images.size > 0 %>
+            <% image = gadget.images[0] %>
+            <img src="<%= image.image.url(:thumbnail) %>"></img>
+          <% end %>
+        </div>
+        <p class="gadget-image-name"><%= gadget.name %></p>
+      <% end %>
+    </div>
+  <% end%>
+</div>

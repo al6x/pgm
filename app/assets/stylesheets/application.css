@@ -1,0 +1,106 @@
+body {
+  padding-top: 60px;
+}
+a, a:hover {
+  color: black;
+}
+/*.fix-file-input {
+  margin-left: 14px;
+  display: inline-block !important;
+}*/
+
+/* Image. */
+.gadget-image-outer {
+  height: 200px;
+}
+.gadget-image {
+  position: relative;
+  float : left;
+  width : 210px;
+  padding: 4px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  line-height: 200px;
+}
+.gadget-image img {
+  vertical-align:middle;
+  max-width: 200px;
+  max-height: 200px;
+}
+.gadget-image-remove {
+  position: absolute;
+  display: block;
+  right: 10px;
+  top: 10px;
+  height: 1em;
+  line-height: 1em;
+  color: black !important;
+}
+
+/* Icon. */
+.gadget-image-outer-icon {
+  height: 50px;
+}
+.gadget-image-icon {
+  width : 60px;
+  text-align: center;
+  line-height: 50px;
+}
+.gadget-image-icon img {
+  vertical-align:middle;
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.gadgets-table td {
+  vertical-align:middle;
+}
+.gadgets-table td:first-child, .gadgets-table td:nth-child(2), .gadgets-table td:last-child {
+  width: 1px;
+}
+.gadgets-table tr:first-child td {
+  border-top: none !important;
+}
+
+/* Image with name. */
+.gadget-image-with-name {
+  position: relative;
+  float : left;
+  width : 210px;
+  padding: 4px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  line-height: 200px;
+}
+.gadget-image-with-name-outer {
+  height: 200px;
+}
+.gadget-image-name {
+  line-height: 15px;
+  overflow: hidden;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+.gadgets-as-thumbnails, .jumbotron {
+  margin-top: 20px;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.edit-button {
+  margin-top: 20px;
+  float: right;
+}
+
+.user-form {
+  margin-right: -15px;
+}

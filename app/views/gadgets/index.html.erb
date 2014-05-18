@@ -1,0 +1,13 @@
+<% if @gadgets.empty? %>
+  <% if @query.blank? %>
+    <%= render 'welcome' %>
+  <% else %>
+    <%= render 'no_results' %>
+  <% end %>
+<% else %>
+  <% if session[:view] == 'thumbnails' %>
+    <%= render 'as_thumbnails' %>
+  <% else %>
+    <%= render 'as_table' %>
+  <% end %>
+<% end %>

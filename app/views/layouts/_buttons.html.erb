@@ -1,0 +1,21 @@
+<%= link_to new_gadget_path, class: "btn btn-primary navbar-btn navbar-left", role: "button", title: "Add Gadget" do %>
+  <span class="glyphicon glyphicon-plus"></span>
+<% end %>
+
+<div class="btn-group navbar-btn">
+  <% active = session[:view] == 'thumbnails' ? '' : 'active' %>
+  <%= link_to view_as_table_gadgets_path, method: 'post', class: "btn btn-default #{active}", role: 'button' do %>
+    <span class="glyphicon glyphicon-th-list"></span>
+  <% end %>
+
+  <% active = session[:view] == 'thumbnails' ? 'active' : '' %>
+  <%= link_to view_as_thumbnails_gadgets_path, method: 'post', class: "btn btn-default #{active}", role: 'button' do %>
+    <span class="glyphicon glyphicon-th"></span>
+  <% end %>
+</div>
+
+<form action="<%= gadgets_path %>" class="navbar-form navbar-left" method="get" role="search">
+  <div class="form-group">
+    <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Search" %>
+  </div>
+</form>

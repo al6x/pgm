@@ -1,0 +1,30 @@
+<%= link_to edit_gadget_path(@gadget), class: "edit-button btn btn-default" do %>
+  <span class="glyphicon glyphicon-pencil"></span>
+<% end %>
+
+<h1><%= @gadget.name %></h1>
+<p><%= @gadget.description %></p>
+
+<div class="clearfix">
+  <% @gadget.images.each do |image| %>
+    <div class="gadget-image">
+      <%= link_to [@gadget, image], class: 'gadget-image-remove', method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <span class="glyphicon glyphicon-remove"></span>
+      <% end %>
+
+      <div class="gadget-image-outer">
+        <img src="<%= image.image.url(:thumbnail) %>"></img>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<% if @gadget.images.empty? %>
+  <p>No images, create one</p>
+<% end %>
+
+<div>
+  <%= form_for [@gadget, @gadget.images.build] do |f| %>
+    <%= f.file_field :image, onchange: "document.getElementById('new_image').submit();" %>
+  <% end %>
+</div>

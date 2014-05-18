@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Gadgets</title>
+
+    <!-- Styles. -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+
+    <!-- Navigation. -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">My Gadgets</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <%= render "layouts/buttons" %>
+          <%= render "users/navigation_form" %>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content. -->
+    <div class="container">
+      <%= yield %>
+    </div>
+
+    <!-- Putting JS down to speedup content loading. -->
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  </body>
+</html>

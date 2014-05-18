@@ -1,0 +1,27 @@
+<table class="table gadgets-table">
+  <% @gadgets.each do |gadget| %>
+    <tr>
+      <td>
+        <% if gadget.images.size > 0 %>
+          <% image = gadget.images[0] %>
+          <%= link_to gadget do %>
+            <div class="gadget-image-icon">
+              <div class="gadget-image-outer-icon">
+                <img src="<%= image.image.url(:icon) %>"></img>
+              </div>
+            </div>
+          <% end %>
+        <% else %>
+          &nbsp;
+        <% end %>
+      </td>
+      <td class="nowrap"><%= link_to gadget do %><%= gadget.name %><% end %></td>
+      <td><%= gadget.description %></td>
+      <td>
+        <%= link_to gadget, method: :delete, data: { confirm: 'Are you sure?' } do %>
+          <span class="glyphicon glyphicon-remove"></span>
+        <% end %>
+      </td>
+    </tr>
+  <% end%>
+</table>
